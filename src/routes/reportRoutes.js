@@ -4,9 +4,9 @@ import {
   generateCategoryExpenseReport,
   generateAnnualFinancialOverview,
   generateBudgetComparisonReport,
-} from "../controllers/reportController";
-import { authMiddleware } from "../middleware/authMiddleware";
-import { validateReportParams } from "../middleware/validationMiddleware";
+} from "../controllers/reportController.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
+import { validateReportParams } from "../middleware/validationMiddleware.js";
 
 const router = express.Router();
 

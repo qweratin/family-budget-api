@@ -4,13 +4,13 @@ import {
   loginUser,
   getUserProfile,
   updateUserProfile,
-} from "../controllers/authController";
+} from "../controllers/authController.js";
 import {
   validateRegistration,
   validateLogin,
   handleValidationErrors,
-} from "../middleware/validationMiddleware";
-import { authMiddleware } from "../middleware/authMiddleware";
+} from "../middleware/validationMiddleware.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 

@@ -1,11 +1,10 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-import authRoutes from "./routes/authRoutes";
-import budgetRoutes from "./routes/budgetRoutes";
-import expenseRoutes from "./routes/expenseRoutes";
-import incomeRoutes from "./routes/incomeRoutes";
-import reportRoutes from "./routes/reportRoutes";
+import authRoutes from "./routes/authRoutes.js";
+import budgetRoutes from "./routes/budgetRoutes.js";
+import expenseRoutes from "./routes/expenseRoutes.js";
+import incomeRoutes from "./routes/incomeRoutes.js";
+import reportRoutes from "./routes/reportRoutes.js";
 
 dotenv.config();
 

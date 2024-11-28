@@ -4,9 +4,9 @@ import {
   getIncomes,
   updateIncome,
   deleteIncome,
-} from "../controllers/incomeController";
-import { authMiddleware } from "../middleware/authMiddleware";
-import { validateIncome } from "../utils/validationSchemas";
+} from "../controllers/incomeController.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
+import { validateIncome } from "../utils/validationSchemas.js";
 
 const router = express.Router();
 

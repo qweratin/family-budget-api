@@ -4,9 +4,9 @@ import {
   getBudgets,
   updateBudget,
   deleteBudget,
-} from "../controllers/budgetController";
-import { authMiddleware } from "../middleware/authMiddleware";
-import { validateBudget } from "../utils/validationSchemas";
+} from "../controllers/budgetController.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
+import { validateBudget } from "../utils/validationSchemas.js";
 
 const router = express.Router();
 
