@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export const createIncome = asyncHandler(async (req, res) => {
   const { amount, source, date, budgetId, description } = req.body;
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const income = await prisma.income.create({
     data: {
@@ -22,7 +22,7 @@ export const createIncome = asyncHandler(async (req, res) => {
 });
 
 export const getIncomes = asyncHandler(async (req, res) => {
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const incomes = await prisma.income.findMany({
     where: { userId },

@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export const createBudget = asyncHandler(async (req, res) => {
   const { name, totalAmount, startDate, endDate } = req.body;
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const budget = await prisma.budget.create({
     data: {
@@ -21,7 +21,7 @@ export const createBudget = asyncHandler(async (req, res) => {
 });
 
 export const getBudgets = asyncHandler(async (req, res) => {
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const budgets = await prisma.budget.findMany({
     where: { userId },
@@ -33,7 +33,7 @@ export const getBudgets = asyncHandler(async (req, res) => {
 export const updateBudget = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { name, totalAmount, startDate, endDate } = req.body;
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const budget = await prisma.budget.update({
     where: { id: Number(id) },

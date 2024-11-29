@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export const createExpense = asyncHandler(async (req, res) => {
   const { amount, category, date, budgetId, description } = req.body;
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const expense = await prisma.expense.create({
     data: {
@@ -22,7 +22,7 @@ export const createExpense = asyncHandler(async (req, res) => {
 });
 
 export const getExpenses = asyncHandler(async (req, res) => {
-  const { userId } = req.user;
+  const { id: userId } = req.user;
 
   const expenses = await prisma.expense.findMany({
     where: { userId },

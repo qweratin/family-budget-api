@@ -4,7 +4,7 @@ import asyncHandler from "express-async-handler";
 const prisma = new PrismaClient();
 
 export const generateMonthlyReport = asyncHandler(async (req, res) => {
-  const { userId } = req.user;
+  const { id: userId } = req.user;
   const { month, year } = req.query;
 
   // Monthly Income Report
@@ -54,7 +54,7 @@ export const generateMonthlyReport = asyncHandler(async (req, res) => {
 });
 
 export const generateCategoryExpenseReport = asyncHandler(async (req, res) => {
-  const { userId } = req.user;
+  const { id: userId } = req.user;
   const { year } = req.query;
 
   const categoryExpenses = await prisma.$queryRaw`
@@ -73,7 +73,7 @@ export const generateCategoryExpenseReport = asyncHandler(async (req, res) => {
 
 export const generateAnnualFinancialOverview = asyncHandler(
   async (req, res) => {
-    const { userId } = req.user;
+    const { id: userId } = req.user;
     const { year } = req.query;
 
     // Monthly Income Breakdown
@@ -136,7 +136,7 @@ export const generateAnnualFinancialOverview = asyncHandler(
 );
 
 export const generateBudgetComparisonReport = asyncHandler(async (req, res) => {
-  const { userId } = req.user;
+  const { id: userId } = req.user;
   const { year } = req.query;
 
   // Budgets for the year
