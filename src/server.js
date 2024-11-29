@@ -6,8 +6,6 @@ import expenseRoutes from "./routes/expenseRoutes.js";
 import incomeRoutes from "./routes/incomeRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 
-dotenv.config();
-
 const app = express();
 
 app.use(cors());

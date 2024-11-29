@@ -1,10 +1,5 @@
 import express from "express";
-import {
-  registerUser,
-  loginUser,
-  getUserProfile,
-  updateUserProfile,
-} from "../controllers/authController.js";
+import { registerUser, loginUser } from "../controllers/authController.js";
 import {
   validateRegistration,
   validateLogin,
@@ -23,10 +18,5 @@ router.post(
 );
 
 router.post("/login", validateLogin, handleValidationErrors, loginUser);
-
-// Protected Routes
-router.get("/profile", authMiddleware, getUserProfile);
-
-router.put("/profile", authMiddleware, updateUserProfile);
 
 export default router;

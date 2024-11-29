@@ -1,4 +1,4 @@
-import { body, validationResult } from "express-validator";
+import { body, validationResult, query } from "express-validator";
 
 export const validateRegistration = [
   body("name").notEmpty().withMessage("Name is required"),
@@ -20,7 +20,6 @@ export const handleValidationErrors = (req, res, next) => {
   }
   next();
 };
-import { query, validationResult } from "express-validator";
 
 // Validate report parameters
 export const validateReportParams = (requiredParams) => {
